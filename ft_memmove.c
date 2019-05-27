@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrheeder <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jrheeder <jrheeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 00:32:44 by jrheeder          #+#    #+#             */
-/*   Updated: 2019/05/23 00:32:45 by jrheeder         ###   ########.fr       */
+/*   Updated: 2019/05/24 19:43:08 by jrheeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void    *ft_memmove(void *dest, const void *src, size_t n)
     unsigned char   *tmp_dest;
     size_t              index;
 
-    tmp_src = (char *)src;
-    tmp_dest = (char *)dest;
+    tmp_src = (unsigned char *)src;
+    tmp_dest = (unsigned char *)dest;
     index = -1;
     if (tmp_src < tmp_dest)
     {
@@ -32,15 +32,4 @@ void    *ft_memmove(void *dest, const void *src, size_t n)
             *(tmp_dest + index) = *(tmp_src + index);
     }
     return (dest);
-}
-#include <stdio.h>
-
-int main(void)
-{
-    char dest[] = "ol";
-    const char src[] = "new";
-    printf("Before memmove dest = %s, src = %s\n", dest, src);
-    ft_memmove(dest, src, 3);
-    printf("After memmove dest = %s, src = %s\n", dest, src);
-    return (0);
 }

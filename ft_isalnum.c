@@ -6,26 +6,18 @@
 /*   By: jrheeder <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 14:18:23 by jrheeder          #+#    #+#             */
-/*   Updated: 2019/05/23 17:14:39 by jrheeder         ###   ########.fr       */
+/*   Updated: 2019/05/24 11:56:10 by jrheeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h> //remove
-
 
 int	ft_isalnum(int c)
 {
 	if (ft_isalpha(c) || ft_isdigit(c))
-	{
-		printf("T");
 		return (1);
-	}
 	else
-	{
-		printf("F");
 		return (0);
-	}
 }
 
 /*

@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrheeder <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jrheeder <jrheeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 00:41:12 by jrheeder          #+#    #+#             */
-/*   Updated: 2019/05/23 00:47:54 by jrheeder         ###   ########.fr       */
+/*   Updated: 2019/05/24 15:49:50 by jrheeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 
-void	ft_putchar();
+#include "libft.h"
 
 void	ft_putstr(char const *s)
 {
@@ -24,11 +23,4 @@ void	ft_putstr(char const *s)
 		ft_putchar(s[i]);
 		i++;
 	}
-}
-
-int	main(void)
-{
-	char str[] = "string";
-	ft_putstr(str);
-	return (0);
 }

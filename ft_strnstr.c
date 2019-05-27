@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrheeder <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jrheeder <jrheeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 00:34:27 by jrheeder          #+#    #+#             */
-/*   Updated: 2019/05/23 00:34:28 by jrheeder         ###   ########.fr       */
+/*   Updated: 2019/05/24 15:52:13 by jrheeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
@@ -38,19 +37,5 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		i++;
 		counter++;
 	}
-	return (0);
-}
-
-
-int	main(void)
-{
-	const char 	haystack[1024] = "step through doors";
-	const char 	needle[] = "door";
-	char		*ret;
-	size_t	len;
-	
-	len = 4;
-	ret = ft_strnstr(haystack, needle, len);
-	printf("The substring in \n%s\n", ret);
 	return (0);
 }

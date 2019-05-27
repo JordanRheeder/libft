@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrheeder <jrheeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/22 23:52:11 by jrheeder          #+#    #+#             */
-/*   Updated: 2019/05/24 15:50:17 by jrheeder         ###   ########.fr       */
+/*   Created: 2019/05/27 00:40:07 by jrheeder          #+#    #+#             */
+/*   Updated: 2019/05/27 00:53:47 by jrheeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int		ft_strcmp(const char *s1, const char *s2)
+void    ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	int				i;
-	int				total;
+    unsigned int    i;
 
-	total	= 0;
-	i		= 0;
-	while (s1[i] != '\0')
-	{
-		if (s1[i] != s2[i])
-		{
-			total =  (s1[i] - s2[i]);
-			break ;
-		}
-		i++;
-	}
-	return (total);
+    i = 0;
+    if (s != '\0' && f != '\0') // prevent invalid inputs
+    {
+            while(*s) // while working with pointer s.
+                (*f)(i++, s++); // apply f to s, then increment.
+    }
 }

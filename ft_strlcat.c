@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrheeder <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jrheeder <jrheeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 00:33:53 by jrheeder          #+#    #+#             */
-/*   Updated: 2019/05/23 00:33:54 by jrheeder         ###   ########.fr       */
+/*   Updated: 2019/05/24 15:51:18 by jrheeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h" //contains string.h
-#include <stdio.h> //remove
+#include "libft.h"
 
 
 size_t ft_strlcat(char *dest, const char *src, size_t n)
@@ -32,21 +31,4 @@ size_t ft_strlcat(char *dest, const char *src, size_t n)
    }
    dest[j + i] = '\0';
    return (i); // returns both dest and src
-}
-
-
-int main(void)
-{
-    char    str1[70] = "asdasd";
-    char    str2[] = "Silly";
-    int     i;
-    int     j;
-
-    //str1 = "JellyBelly";
-
-    j = ft_strlen(str1);
-    i = ft_strlen(str2); 
-    ft_strlcat(str1, str2, i + j);
-    printf("%s\n", str1);
-    return (0);
 }

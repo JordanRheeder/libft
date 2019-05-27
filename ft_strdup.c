@@ -3,44 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrheeder <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jrheeder <jrheeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 00:33:48 by jrheeder          #+#    #+#             */
-/*   Updated: 2019/05/23 00:33:49 by jrheeder         ###   ########.fr       */
+/*   Updated: 2019/05/24 19:47:44 by jrheeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
-#include <stdio.h>
 #include <stdlib.h>
 
-char	*ft_strdup(const char *str)
+char	*ft_strdup(const char *s1)
 {
-	int		i;
-	int		strlenis;
-	char	*strdup;
+	char *tmp;
 
-	i = 0;
-	strlenis = strlen((char*)str);
-	strdup = (char*)malloc((strlenis + 1) * sizeof(*str));
-	strdup[strlenis + 1] = '\0';
-	while (i <= strlenis)
-	{
-		strdup[i] = str[i];
-		i++;
-	}
-	return (strdup);
-}
-
-int main()
-{
-    char source[] = "GeeksForGeeks";
-
-    // A copy of source is created dynamically
-    // and pointer to copy is returned.
-    char* target = strdup(source);
-
-    printf("%s", target);
-    return 0;
+	tmp = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 1));
+	if (tmp == NULL)
+		return (NULL);
+	else
+		return (ft_strcpy(tmp, s1));
 }

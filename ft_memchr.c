@@ -3,42 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrheeder <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jrheeder <jrheeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 00:32:27 by jrheeder          #+#    #+#             */
-/*   Updated: 2019/05/23 00:32:28 by jrheeder         ###   ########.fr       */
+/*   Updated: 2019/05/24 16:33:12 by jrheeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h> // remove later
 
-void    *ft_memchr(const void *s, int c, size_t n)
+void *ft_memchr(const void *s, int c, size_t n)
 {
-    // unsigned char    *tmp_s;
-    const char          *str;
-    size_t              count;
+	size_t i;
+	unsigned char *str;
 
-    str = (const char *)s;
-    count = 0;
-    while (count < n)
-    {
-        if (*str == (const char)c)
-            return (str);
-        ++str;
-        ++count;
-    }
-    return (NULL);
+	i = 0;
+	str = (unsigned char *)s;
+	while (i < n)
+	{
+		if ((unsigned char)c != str[i])
+		{
+			i++;
+		}
+		else if (str[i] == (unsigned char)c)
+			return (str);
+	}
+	return (NULL);
 }
-
-int main(void)
-{
-    const char str[] = "QQWQQ";
-    const char ch = 'W';
-    char *ret; //return
-
-    ret = memchr(str, ch, strlen(str));
-
-    printf("String after %c is %s\n", ch, ret);
-    return (0);
-}   

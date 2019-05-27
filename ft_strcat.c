@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrheeder <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jrheeder <jrheeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 00:32:55 by jrheeder          #+#    #+#             */
-/*   Updated: 2019/05/23 00:32:56 by jrheeder         ###   ########.fr       */
+/*   Updated: 2019/05/24 15:49:15 by jrheeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <string.h>
-#include <stdio.h>
 
 char    *ft_strcat(char *dest, const char *src)
 {
@@ -34,14 +32,4 @@ char    *ft_strcat(char *dest, const char *src)
     }
     dest[i] = '\0';
     return (dest);
-}
-
-
-int main(void)
-{
-    char str_d[] = "Stuff";
-    char str_s[] = "Added";
-    ft_strcat(str_d, str_s);
-    printf("%s", str_d);
-    return (0);
 }

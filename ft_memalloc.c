@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrheeder <jrheeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/22 23:52:11 by jrheeder          #+#    #+#             */
-/*   Updated: 2019/05/24 15:50:17 by jrheeder         ###   ########.fr       */
+/*   Created: 2019/05/26 20:32:38 by jrheeder          #+#    #+#             */
+/*   Updated: 2019/05/26 22:34:38 by jrheeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-int		ft_strcmp(const char *s1, const char *s2)
+void    *ft_memalloc(size_t size)
 {
-	int				i;
-	int				total;
+    void    *mem;
 
-	total	= 0;
-	i		= 0;
-	while (s1[i] != '\0')
-	{
-		if (s1[i] != s2[i])
-		{
-			total =  (s1[i] - s2[i]);
-			break ;
-		}
-		i++;
-	}
-	return (total);
+    mem = malloc(size);
+    if (!mem)
+        return (NULL);
+    ft_bzero(mem, size);
+    return (mem);
 }

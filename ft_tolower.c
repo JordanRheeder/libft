@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrheeder <jrheeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/22 23:52:11 by jrheeder          #+#    #+#             */
-/*   Updated: 2019/05/24 15:50:17 by jrheeder         ###   ########.fr       */
+/*   Created: 2019/05/26 22:40:41 by jrheeder          #+#    #+#             */
+/*   Updated: 2019/05/26 22:40:43 by jrheeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strcmp(const char *s1, const char *s2)
+int	ft_tolower(int c)
 {
-	int				i;
-	int				total;
-
-	total	= 0;
-	i		= 0;
-	while (s1[i] != '\0')
+	if (ft_isalpha(c))
 	{
-		if (s1[i] != s2[i])
-		{
-			total =  (s1[i] - s2[i]);
-			break ;
-		}
-		i++;
+		if (c >= 97 && c <= 122)
+			return (c);
+		else
+			return (c + 32);
 	}
-	return (total);
+	else
+		return (c);
 }
