@@ -6,7 +6,7 @@
 /*   By: jrheeder <jrheeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 00:33:41 by jrheeder          #+#    #+#             */
-/*   Updated: 2019/05/24 15:50:35 by jrheeder         ###   ########.fr       */
+/*   Updated: 2019/05/28 11:55:01 by jrheeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ char    *ft_strcpy(char *s1, const char *s2)
         s1[cur] = s2[cur];
         cur++;
     }
-    s1[cur] = '\0';
+//    s1[cur] = '\0';
     return (s1);
 }

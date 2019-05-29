@@ -47,6 +47,9 @@ SRC =	ft_bzero.c		\
 		ft_strmapi.c	\
 		ft_strequ.c		\
 		ft_strnequ.c	\
+		ft_strsub.c		\
+		ft_strndup.c	\
+		ft_strjoin.c	\
 
 
 

@@ -6,7 +6,7 @@
 /*   By: jrheeder <jrheeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 00:32:27 by jrheeder          #+#    #+#             */
-/*   Updated: 2019/05/24 16:33:12 by jrheeder         ###   ########.fr       */
+/*   Updated: 2019/05/27 15:48:45 by jrheeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void *ft_memchr(const void *s, int c, size_t n)
 			i++;
 		}
 		else if (str[i] == (unsigned char)c)
-			return (str);
+			return (str + i);
 	}
 	return (NULL);
 }

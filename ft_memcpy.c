@@ -6,13 +6,33 @@
 /*   By: jrheeder <jrheeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 00:32:36 by jrheeder          #+#    #+#             */
-/*   Updated: 2019/05/25 17:20:15 by jrheeder         ###   ########.fr       */
+/*   Updated: 2019/05/27 15:16:12 by jrheeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 //#include <stdlib.h>
-void    *ft_memcpy(char *dest, const char *src, size_t len)
+void    *ft_memcpy(void *dest, const void *src, size_t len)
+{
+    size_t          i;
+    unsigned char   *d;
+    unsigned char   *s;
+
+    d = (unsigned char *)dest;
+    s = (unsigned char *)src;
+    i = 0;
+    if (dest == NULL && src == NULL)
+        return (0);
+    while (i < len)
+    {
+        d[i] = s[i];
+        i++;
+    }
+    return (dest);
+}
+
+
+/*
 {
     char *d = dest;
     const char *s = src;
@@ -26,28 +46,5 @@ void    *ft_memcpy(char *dest, const char *src, size_t len)
         *d++ = *s++;
     }
     return (dest);
-}
-
-
-
-
-
-
-
-/*
-void	*ft_memcpy(char *dest, const char *src, size_t n)
-{
-    size_t  i;
-    char    *ptr1;
-    char    *ptr2;
-
-    ptr1 = (char *)dest;
-    ptr2 = (char *)src;
-    i = -1;
-    if (n == NULL)
-        return (dest);
-    while (++i < n)
-        *(ptr1 + i) = *(ptr2 + i);
-	return (dest);
 }
 */

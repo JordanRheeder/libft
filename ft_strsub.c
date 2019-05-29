@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrheeder <jrheeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/23 00:32:55 by jrheeder          #+#    #+#             */
-/*   Updated: 2019/05/28 11:55:14 by jrheeder         ###   ########.fr       */
+/*   Created: 2019/05/27 06:02:51 by jrheeder          #+#    #+#             */
+/*   Updated: 2019/05/27 16:55:18 by jrheeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strcat(char *dest, const char *src)
+char    *ft_strsub(char const *s, unsigned int start, size_t len)
 {
-    int         i;
-    int         j;
-
-    i = 0;
-    j = 0;
-    if (dest == NULL) // Checking if we have values.
-        return (NULL);
-    while (dest[i])
-        i++;
-    while (src[j])
+    while (start < len)
     {
-        dest[i + j] = src[j];
-        j++;
+        s = (s + start++);
+            //return (NULL);
+        return (ft_strndup(s, len));
     }
-    dest[i + j] = '\0';
-    return (dest);
+    return (0);
 }
