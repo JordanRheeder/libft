@@ -6,13 +6,13 @@
 /*   By: jrheeder <jrheeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/24 11:25:54 by jrheeder          #+#    #+#             */
-/*   Updated: 2019/05/26 22:35:34 by jrheeder         ###   ########.fr       */
+/*   Updated: 2019/06/05 15:49:52 by jrheeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isascii(int c)
 {
-	if	(c >= 0 && c <= 127)
+	if (c >= 0 && c <= 127)
 		return (1);
 	else
 		return (0);

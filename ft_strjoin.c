@@ -6,36 +6,24 @@
 /*   By: jrheeder <jrheeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 20:38:48 by jrheeder          #+#    #+#             */
-/*   Updated: 2019/05/28 13:52:26 by jrheeder         ###   ########.fr       */
+/*   Updated: 2019/06/08 22:22:09 by jrheeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
 
-char    *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-    char    *pdest;
-    int     len;
-
-    len = ft_strlen(s1) + ft_strlen(s2) + 1;
-    pdest = (char *)malloc((len + 1)*sizeof(char));
-    if (s1 == NULL)
-        return (NULL);
-    ft_strcpy(pdest, s1);
-    ft_strcat(pdest, s2);
-    pdest[len] = '\0';
-    printf("%s", pdest);
-    return (pdest);
+	char	*pdest;
+	int		len;
+	if (!(s1 && s2))
+		return (NULL);
+	len = ft_strlen(s1) + ft_strlen(s2) + 1;
+	if (!(pdest = (char *)malloc((len + 1) * sizeof(char))))
+		return (NULL);
+	if (s1 == NULL)
+		return (NULL);
+	ft_strcpy(pdest, s1);
+	ft_strcat(pdest, s2);
+	return (pdest);
 }
-
-/*
-int main(void)
-{
-    char const  s1[] = "Hello";
-    char const  s2[] = "olleH";
-    ft_strjoin(s1, s2);
-    return (0);
-}
-*/

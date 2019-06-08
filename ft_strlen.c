@@ -6,18 +6,18 @@
 /*   By: jrheeder <jrheeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 00:33:58 by jrheeder          #+#    #+#             */
-/*   Updated: 2019/05/24 15:51:30 by jrheeder         ###   ########.fr       */
+/*   Updated: 2019/06/05 16:29:58 by jrheeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t  ft_strlen(const char *s1)
+size_t	ft_strlen(const char *s1)
 {
-    size_t     i;
+	size_t	i;
 
-    i = 0;
-    while (s1[i] != '\0')
-        i++;
-    return (i);
+	i = 0;
+	while (s1[i] != '\0')
+		i++;
+	return (i);
 }

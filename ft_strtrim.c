@@ -1,18 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrheeder <jrheeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/26 23:02:05 by jrheeder          #+#    #+#             */
-/*   Updated: 2019/06/05 16:17:33 by jrheeder         ###   ########.fr       */
+/*   Created: 2019/05/29 13:32:59 by jrheeder          #+#    #+#             */
+/*   Updated: 2019/06/08 22:23:47 by jrheeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-char	*ft_strnew(size_t size)
+char	*ft_strtrim(char const *s)
 {
-	return (ft_memalloc((size + 1) * sizeof(char)));
+	int		sln;
+	int		bgn;
+	char	*str;
+
+	if (!s)
+		return (0);
+	bgn = 0;
+	sln = (ft_strlen(s) - 1);
+	while ((s[bgn] == ' ') || (s[bgn] == '\n') ||
+	(s[bgn] == '\t'))
+	{
+		bgn++;
+		if (s[bgn] == '\0')
+			return ("");
+	}
+	while ((s[sln] == ' ') || (s[sln] == '\n') ||
+		(s[sln] == '\t'))
+		sln--;
+	str = ft_strsub(s, bgn, (sln - bgn + 1));
+	if (str)
+	{
+		return (str);
+	}
+	return (0);
 }

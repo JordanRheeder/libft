@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrheeder <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jrheeder <jrheeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 14:18:23 by jrheeder          #+#    #+#             */
-/*   Updated: 2019/05/24 11:56:10 by jrheeder         ###   ########.fr       */
+/*   Updated: 2019/06/05 15:49:33 by jrheeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,3 @@ int	ft_isalnum(int c)
 	else
 		return (0);
 }
-
-/*
-int	main(void)
-{
-	char c;
-	char d;
-
-	c = '9';
-	d = 'd';
-
-	ft_isalnum(c);
-	ft_isalnum(d);
-	return (0);
-}*/

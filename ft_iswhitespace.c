@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_iswhitespace.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrheeder <jrheeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/26 23:02:05 by jrheeder          #+#    #+#             */
-/*   Updated: 2019/06/05 16:17:33 by jrheeder         ###   ########.fr       */
+/*   Created: 2019/05/29 13:37:34 by jrheeder          #+#    #+#             */
+/*   Updated: 2019/06/05 15:50:22 by jrheeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strnew(size_t size)
+char	ft_iswhitespace(int c)
 {
-	return (ft_memalloc((size + 1) * sizeof(char)));
+	return (c == '\n' || c == '\t' || c == ' ');
 }

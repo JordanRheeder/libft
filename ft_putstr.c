@@ -6,10 +6,9 @@
 /*   By: jrheeder <jrheeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 00:41:12 by jrheeder          #+#    #+#             */
-/*   Updated: 2019/05/24 15:49:50 by jrheeder         ###   ########.fr       */
+/*   Updated: 2019/06/08 22:24:42 by jrheeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "libft.h"
 
@@ -18,9 +17,12 @@ void	ft_putstr(char const *s)
 	int	i;
 
 	i = 0;
-	while (s[i] != '\0')
+	if (s)
 	{
-		ft_putchar(s[i]);
-		i++;
+		while (s[i] != '\0')
+		{
+			ft_putchar(s[i]);
+			i++;
+		}
 	}
 }
