@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrheeder <jrheeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/22 23:52:11 by jrheeder          #+#    #+#             */
-/*   Updated: 2019/06/10 15:38:41 by jrheeder         ###   ########.fr       */
+/*   Created: 2019/06/10 12:51:08 by jrheeder          #+#    #+#             */
+/*   Updated: 2019/06/10 23:41:05 by jrheeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strcmp(const char *s1, const char *s2)
+t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	int i;
+	t_list	*ret;
+	t_list	*fresh;
 
-	i = 0;
-	while ((s1[i] && s2[i]) && (s1[i] == s2[i]))
-		i++;
-	if (((unsigned char)s1[i] - (unsigned char)s2[i]) < 0)
-		return (-1);
-	else if (((unsigned char)s1[i] - (unsigned char)s2[i]) > 0)
-		return (1);
-	return (0);
+	if (lst && f)
+	{
+		ret = f(lst);
+		fresh = ret;
+		while (lst->next)
+		{
+			lst = lst->next;
+			if (!(ret->next = f(lst)))
+			{
+				free(ret->next);
+				return (NULL);
+			}
+			ret = ret->next;
+		}
+		return (fresh);
+	}
+	return (NULL);
 }

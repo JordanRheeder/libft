@@ -6,7 +6,7 @@
 /*   By: jrheeder <jrheeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 02:44:18 by jrheeder          #+#    #+#             */
-/*   Updated: 2019/06/08 22:17:17 by jrheeder         ###   ########.fr       */
+/*   Updated: 2019/06/10 13:53:12 by jrheeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int		ft_strequ(char const *s1, char const *s2)
 	unsigned int	i;
 	unsigned int	s1len;
 	unsigned int	s2len;
+
 	if (s1 && s2)
 	{
 		i = 0;

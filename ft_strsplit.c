@@ -6,7 +6,7 @@
 /*   By: jrheeder <jrheeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 12:30:45 by jrheeder          #+#    #+#             */
-/*   Updated: 2019/06/08 21:31:43 by jrheeder         ###   ########.fr       */
+/*   Updated: 2019/06/10 19:12:23 by jrheeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,60 +15,61 @@
 static int	ft_count(const char *str, char c)
 {
 	int count;
+	int i;
 
+	i = 0;
 	count = 0;
-	while (*str)
+	while (str[i] != '\0')
 	{
-		if ((*str != c && (*(str + 1) == c)) || (*(str + 1) == '\0'))
+		while (str[i] == c)
+			i++;
+		if (str[i] != c && str[i] != '\0')
 			count++;
-		str++;
+		while (str[i] != c && str[i] != '\0')
+			i++;
 	}
 	return (count);
-}
-
-static int	ft_sizecheck(int c)
-{
-	if (c == 1)
-		c = 2;
-	else
-		return (c);
-	return (c);
 }
 
 static int	ft_length(char const *str, char c)
 {
 	int i;
+	int len;
 
+	len = 0;
 	i = 0;
-	if (!str)
-		return (0);
-	while (str[i] != c && str[i])
+	while (str[i] == c)
 		i++;
-	return (i);
+	while (str[i] != c && str[i] != '\0')
+	{
+		i++;
+		len++;
+	}
+	return (len);
 }
 
 char		**ft_strsplit(char const *str, char c)
 {
 	int		i;
 	int		j;
-	int		words;
+	int		k;
 	char	**new;
 
 	i = 0;
+	k = 0;
 	if (!str || !c)
 		return (0);
-	words = ft_count(str, c);
-	new = (char **)malloc(sizeof(char *) * (words + 1));
+	new = (char **)malloc(sizeof(char *) * (ft_count(str, c) + 1));
 	if (new == NULL)
 		return (NULL);
-	while (i < ft_sizecheck(words) - 1)
+	while (ft_count(str, c) > i)
 	{
-		while (*str == c && *str)
-			str++;
+		while (str[k] == c && str[k])
+			k++;
 		new[i] = (char *)malloc(sizeof(char) * (ft_length(str, c) + 1));
 		j = 0;
-		while (*str != c && *str)
-			new[i][j++] = *str++;
+		while (str[k] != c && str[k])
+			new[i][j++] = str[k++];
 		new[i][j] = '\0';
 		i++;
 	}

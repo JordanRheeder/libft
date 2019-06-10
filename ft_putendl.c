@@ -6,7 +6,7 @@
 /*   By: jrheeder <jrheeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 08:42:17 by jrheeder          #+#    #+#             */
-/*   Updated: 2019/06/08 22:25:09 by jrheeder         ###   ########.fr       */
+/*   Updated: 2019/06/10 13:54:59 by jrheeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putendl(char const *s)
 	int	i;
 
 	i = 0;
-	if(s)
+	if (s)
 	{
 		while (s[i] != '\0')
 		{

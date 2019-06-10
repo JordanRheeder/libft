@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrheeder <jrheeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/29 13:32:59 by jrheeder          #+#    #+#             */
-/*   Updated: 2019/06/10 17:00:59 by jrheeder         ###   ########.fr       */
+/*   Created: 2019/06/09 01:59:50 by jrheeder          #+#    #+#             */
+/*   Updated: 2019/06/10 14:42:29 by jrheeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-char	*ft_strtrim(char const *s)
+t_list		*ft_lstnew(void const *content, size_t content_size)
 {
-	int		sln;
-	int		bgn;
-	char	*str;
+	t_list	*ret;
 
-	if (!s)
-		return (0);
-	bgn = 0;
-	sln = (ft_strlen(s) - 1);
-	while ((s[bgn] == ' ') || (s[bgn] == '\n') ||
-	(s[bgn] == '\t'))
+	if (!(ret = (t_list *)malloc(sizeof(t_list) * (content_size + 1))))
+		return (NULL);
+	if (content == 0)
 	{
-		bgn++;
-		if (s[bgn] == '\0')
-			return (ft_strdup(""));
+		ret->content = NULL;
+		ret->content_size = 0;
 	}
-	while ((s[sln] == ' ') || (s[sln] == '\n') ||
-		(s[sln] == '\t'))
-		sln--;
-	str = ft_strsub(s, bgn, (sln - bgn + 1));
-	if (str)
+	else
 	{
-		return (str);
+		if (!(ret->content = malloc(content_size)))
+			return (NULL);
+		ft_memcpy(ret->content, content, content_size);
+		ret->content_size = content_size;
 	}
-	return (0);
+	ret->next = NULL;
+	return (ret);
 }
