@@ -6,11 +6,13 @@
 /*   By: jrheeder <jrheeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 13:37:34 by jrheeder          #+#    #+#             */
-/*   Updated: 2019/06/05 15:50:22 by jrheeder         ###   ########.fr       */
+/*   Updated: 2019/07/22 12:32:01 by jrheeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	ft_iswhitespace(int c)
 {
-	return (c == '\n' || c == '\t' || c == ' ');
+	if (c == ' ' || (c >= '\t' && c <= '\r'))
+		return (1);
+	return (0);
 }

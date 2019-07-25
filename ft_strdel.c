@@ -6,17 +6,13 @@
 /*   By: jrheeder <jrheeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/26 23:08:22 by jrheeder          #+#    #+#             */
-/*   Updated: 2019/06/10 13:55:13 by jrheeder         ###   ########.fr       */
+/*   Updated: 2019/07/22 12:51:44 by jrheeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	ft_strdel(char **as)
 {
-	if (as != NULL)
-	{
-		free(*as);
-		*as = NULL;
-	}
+	ft_memdel((void**)as);
 }

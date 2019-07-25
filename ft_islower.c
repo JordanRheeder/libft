@@ -6,11 +6,9 @@
 /*   By: jrheeder <jrheeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/24 15:47:21 by jrheeder          #+#    #+#             */
-/*   Updated: 2019/06/05 17:17:51 by jrheeder         ###   ########.fr       */
+/*   Updated: 2019/06/18 13:52:08 by jrheeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_islower(int c)
 {

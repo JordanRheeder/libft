@@ -6,13 +6,15 @@
 /*   By: jrheeder <jrheeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/26 23:20:09 by jrheeder          #+#    #+#             */
-/*   Updated: 2019/06/05 17:07:25 by jrheeder         ###   ########.fr       */
+/*   Updated: 2019/07/22 12:52:22 by jrheeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	ft_striter(char *s, void (*f)(char *))
 {
-	if (s != '\0' && f != '\0')
+	if (s && f)
 	{
 		while (*s)
 			f(s++);

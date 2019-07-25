@@ -6,12 +6,11 @@
 /*   By: jrheeder <jrheeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 10:15:30 by jrheeder          #+#    #+#             */
-/*   Updated: 2019/06/10 10:33:00 by jrheeder         ###   ########.fr       */
+/*   Updated: 2019/06/18 13:54:11 by jrheeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {

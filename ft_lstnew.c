@@ -6,12 +6,11 @@
 /*   By: jrheeder <jrheeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/09 01:59:50 by jrheeder          #+#    #+#             */
-/*   Updated: 2019/06/10 14:42:29 by jrheeder         ###   ########.fr       */
+/*   Updated: 2019/06/18 13:54:17 by jrheeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 t_list		*ft_lstnew(void const *content, size_t content_size)
 {

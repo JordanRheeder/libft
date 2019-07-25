@@ -6,11 +6,10 @@
 /*   By: jrheeder <jrheeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 10:09:58 by jrheeder          #+#    #+#             */
-/*   Updated: 2019/06/07 10:13:26 by jrheeder         ###   ########.fr       */
+/*   Updated: 2019/06/18 13:54:41 by jrheeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <unistd.h>
 
 void	ft_putchar_fd(char c, int fd)
